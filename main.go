@@ -29,7 +29,8 @@ func main() {
         app.Use(cors.New(cors.Config{
                 AllowOriginsFunc: func(origin string) bool { return true },
                 AllowHeaders:     "Origin,Content-Type,Accept,Authorization",
-                AllowMethods:     "GET, POST, PUT, DELETE, OPTIONS",
+                AllowMethods:     "GET,POST,PUT,DELETE,OPTIONS",
+                AllowCredentials: true,
         }))
 
         // Public routes (no auth required)
